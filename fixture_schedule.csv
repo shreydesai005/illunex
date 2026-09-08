@@ -1,0 +1,13 @@
+position_id,room_id,room_application,product_id,manufacturer,total_lumens,input_watts,price,mounting_type,match_score,status
+2sLSEjvKIplAtWbum0uVFc,2H5YeoVaROWb0biZuwK43Q,living_room,R522_D85P,iGuzzini illuminazione S.p.A,1068.0,9.5,78,recessed_ceiling,0.585,MATCHED
+0ZuuLNxX3$kVoMNB_yGiHs,2H5YeoVaROWb0biZuwK43Q,living_room,R522_D85P,iGuzzini illuminazione S.p.A,1068.0,9.5,78,recessed_ceiling,0.585,MATCHED
+0fzOJFIYkEyB6u$1Y_N9mF,2H5YeoVaROWb0biZuwK43Q,living_room,R522_D85P,iGuzzini illuminazione S.p.A,1068.0,9.5,78,recessed_ceiling,0.585,MATCHED
+2K4o5HI24A8vfDbAeHav9x,2H5YeoVaROWb0biZuwK43Q,living_room,R522_D85P,iGuzzini illuminazione S.p.A,1068.0,9.5,78,recessed_ceiling,0.585,MATCHED
+2lFWxGb3Bb29sUGvDYd11H,3UoVmhGEdDmBSRFIrnp8ON,bedroom,R522_D85P,iGuzzini illuminazione S.p.A,1068.0,9.5,78,recessed_ceiling,0.625,MATCHED
+28XVuP2KNcUnSeKLEZBLOq,3UoVmhGEdDmBSRFIrnp8ON,bedroom,R522_D85P,iGuzzini illuminazione S.p.A,1068.0,9.5,78,recessed_ceiling,0.625,MATCHED
+0re8tmHgGvx6hX9rApwW9o,3UoVmhGEdDmBSRFIrnp8ON,bedroom,R522_D85P,iGuzzini illuminazione S.p.A,1068.0,9.5,78,recessed_ceiling,0.625,MATCHED
+1HZ$4jb2iLyXjzzLwHOrrx,3UoVmhGEdDmBSRFIrnp8ON,bedroom,R522_D85P,iGuzzini illuminazione S.p.A,1068.0,9.5,78,recessed_ceiling,0.625,MATCHED
+1ha4CQMZlDE1jN63_9qIw2,2DauxQOeCKezQCl7Qyokxz,bathroom,NONE,,,,,,,NO MATCH -- needs catalog attention
+0wSnrXGTKxrURDnZVvSg_B,2DauxQOeCKezQCl7Qyokxz,bathroom,NONE,,,,,,,NO MATCH -- needs catalog attention
+02p1Y8F7Zo7d85EvwtSGvk,3aIzdL6swdAd6pIWvp8W6H,closet,NONE,,,,,,,NO MATCH -- needs catalog attention
+3WtjXLwxQ6bcd6uqliANe5,3aIzdL6swdAd6pIWvp8W6H,closet,NONE,,,,,,,NO MATCH -- needs catalog attention

@@ -1,0 +1,110 @@
+[
+  {
+    "position_id": "2sLSEjvKIplAtWbum0uVFc",
+    "room_id": "2H5YeoVaROWb0biZuwK43Q",
+    "x": 1.005,
+    "y": -2.495,
+    "z": 2.888,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "0ZuuLNxX3$kVoMNB_yGiHs",
+    "room_id": "2H5YeoVaROWb0biZuwK43Q",
+    "x": 2.655,
+    "y": -2.495,
+    "z": 2.888,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "0fzOJFIYkEyB6u$1Y_N9mF",
+    "room_id": "2H5YeoVaROWb0biZuwK43Q",
+    "x": 1.005,
+    "y": -5.345,
+    "z": 2.888,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "2K4o5HI24A8vfDbAeHav9x",
+    "room_id": "2H5YeoVaROWb0biZuwK43Q",
+    "x": 2.655,
+    "y": -5.345,
+    "z": 2.888,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "2lFWxGb3Bb29sUGvDYd11H",
+    "room_id": "3UoVmhGEdDmBSRFIrnp8ON",
+    "x": 6.405,
+    "y": -1.245,
+    "z": 2.888,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "28XVuP2KNcUnSeKLEZBLOq",
+    "room_id": "3UoVmhGEdDmBSRFIrnp8ON",
+    "x": 8.805,
+    "y": -1.245,
+    "z": 2.888,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "0re8tmHgGvx6hX9rApwW9o",
+    "room_id": "3UoVmhGEdDmBSRFIrnp8ON",
+    "x": 6.405,
+    "y": -3.745,
+    "z": 2.888,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "1HZ$4jb2iLyXjzzLwHOrrx",
+    "room_id": "3UoVmhGEdDmBSRFIrnp8ON",
+    "x": 8.805,
+    "y": -3.745,
+    "z": 2.888,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "1ha4CQMZlDE1jN63_9qIw2",
+    "room_id": "2DauxQOeCKezQCl7Qyokxz",
+    "x": 4.405,
+    "y": -2.195,
+    "z": 2.888,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "0wSnrXGTKxrURDnZVvSg_B",
+    "room_id": "2DauxQOeCKezQCl7Qyokxz",
+    "x": 4.405,
+    "y": -4.945,
+    "z": 2.888,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "02p1Y8F7Zo7d85EvwtSGvk",
+    "room_id": "3aIzdL6swdAd6pIWvp8W6H",
+    "x": 6.305,
+    "y": -5.345,
+    "z": 2.888,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "3WtjXLwxQ6bcd6uqliANe5",
+    "room_id": "3aIzdL6swdAd6pIWvp8W6H",
+    "x": 8.755,
+    "y": -5.345,
+    "z": 2.888,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  }
+]

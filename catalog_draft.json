@@ -1,0 +1,163 @@
+[
+  {
+    "product_id": "MJ61_D76L",
+    "manufacturer": "iGuzzini illuminazione S.p.A",
+    "description": "iN30 LED: High Contrast module L=1197 - direct emission with controlled glare - LED  - warm white  integrated DALI dimmable control gear - 23.5W 1782lm - 3000K - CRI 90",
+    "total_lumens": 1782.0,
+    "total_lumens_source": "stated_in_description",
+    "input_watts": 11.75,
+    "efficacy_lm_per_w": 151.7,
+    "cct_k": 3000,
+    "cri": 90,
+    "beam_angle_deg": 48.0,
+    "mounting_type": "TODO_confirm_mounting_type",
+    "suitable_roles": [
+      "TODO_confirm_role"
+    ],
+    "include_in_automated_matching": true,
+    "application": "TODO_assign_room_types",
+    "aesthetic_tags": [
+      "TODO_assign_style_tags"
+    ],
+    "price": "TODO_add_price",
+    "source_ies_file": "MJ61_1_D76L.IES"
+  },
+  {
+    "product_id": "RN74(WR)_E55Z",
+    "manufacturer": "iGuzzini illuminazione S.p.A",
+    "description": "BE TWO: Ceiling-mounted luminaire - 114 - General Light - 12.9W 1450.7lm - 3000K - CRI 90",
+    "total_lumens": 1450.7,
+    "total_lumens_source": "stated_in_description",
+    "input_watts": 12.9,
+    "efficacy_lm_per_w": 112.5,
+    "cct_k": 3000,
+    "cri": 90,
+    "beam_angle_deg": 62.0,
+    "mounting_type": "surface_ceiling",
+    "suitable_roles": [
+      "ambient"
+    ],
+    "include_in_automated_matching": true,
+    "application": "TODO_assign_room_types",
+    "aesthetic_tags": [
+      "TODO_assign_style_tags"
+    ],
+    "price": "TODO_add_price",
+    "source_ies_file": "RN74-G0_E55Z.IES"
+  },
+  {
+    "product_id": "MJ50_A19A",
+    "manufacturer": "iGuzzini illuminazione S.p.A",
+    "description": "iN30 LED: initial module L 1197 - Low Contrast - direct emission - LED  - warm white  integrated DALI dimmable control gear - 19W 1886.7lm - 3000K",
+    "total_lumens": 1886.7,
+    "total_lumens_source": "stated_in_description",
+    "input_watts": 19.0,
+    "efficacy_lm_per_w": 99.3,
+    "cct_k": 3000,
+    "cri": "TODO_confirm_cri_check_datasheet",
+    "beam_angle_deg": 108.0,
+    "mounting_type": "TODO_confirm_mounting_type",
+    "suitable_roles": [
+      "TODO_confirm_role"
+    ],
+    "include_in_automated_matching": true,
+    "application": "TODO_assign_room_types",
+    "aesthetic_tags": [
+      "TODO_assign_style_tags"
+    ],
+    "price": "TODO_add_price",
+    "source_ies_file": "mj50_a19a.ies"
+  },
+  {
+    "product_id": "MV80_LD22",
+    "manufacturer": "iGuzzini illuminazione S.p.A",
+    "description": "Reflex: Fixed circular recessed luminaire -  75 mm - neutral white - flood optic - UGR<19 - 8.6W 817.3lm - 4000K",
+    "total_lumens": 817.3,
+    "total_lumens_source": "stated_in_description",
+    "input_watts": 8.6,
+    "efficacy_lm_per_w": 95.0,
+    "cct_k": 4000,
+    "cri": 80,
+    "beam_angle_deg": 30.0,
+    "mounting_type": "recessed_ceiling",
+    "suitable_roles": [
+      "ambient"
+    ],
+    "include_in_automated_matching": true,
+    "application": "TODO_assign_room_types",
+    "aesthetic_tags": [
+      "TODO_assign_style_tags"
+    ],
+    "price": "TODO_add_price",
+    "source_ies_file": "mv80_ld22.ies"
+  },
+  {
+    "product_id": "R522.D8_D85P",
+    "manufacturer": "iGuzzini illuminazione S.p.A",
+    "description": "Easy LED:  105 mm - warm white - DALI - 9.5W 1068lm - 3000K - CRI 90",
+    "total_lumens": 1068.0,
+    "total_lumens_source": "stated_in_description",
+    "input_watts": 9.5,
+    "efficacy_lm_per_w": 112.4,
+    "cct_k": 3000,
+    "cri": 90,
+    "beam_angle_deg": 62.0,
+    "mounting_type": "TODO_confirm_mounting_type",
+    "suitable_roles": [
+      "TODO_confirm_role"
+    ],
+    "include_in_automated_matching": true,
+    "application": "TODO_assign_room_types",
+    "aesthetic_tags": [
+      "TODO_assign_style_tags"
+    ],
+    "price": "TODO_add_price",
+    "source_ies_file": "r522-d8_d85p.ies"
+  },
+  {
+    "product_id": "SL25.01_L396",
+    "manufacturer": "iGuzzini illuminazione S.p.A",
+    "description": "Clan floor lamp H=1688mm 400mm - 11W 1049.5lm - 3000K",
+    "total_lumens": 1049.5,
+    "total_lumens_source": "stated_in_description",
+    "input_watts": 11.0,
+    "efficacy_lm_per_w": 95.4,
+    "cct_k": 3000,
+    "cri": "TODO_confirm_cri_check_datasheet",
+    "beam_angle_deg": 0.0,
+    "mounting_type": "floor_standing",
+    "suitable_roles": [
+      "decorative_portable"
+    ],
+    "include_in_automated_matching": false,
+    "application": "TODO_assign_room_types",
+    "aesthetic_tags": [
+      "TODO_assign_style_tags"
+    ],
+    "price": "TODO_add_price",
+    "source_ies_file": "sl25-01_l396.ies"
+  },
+  {
+    "product_id": "SU33.01_L394",
+    "manufacturer": "iGuzzini illuminazione S.p.A",
+    "description": "Cespuglio: Bush Lamp 2700K E14 - 4.3W 192.7lm",
+    "total_lumens": 192.7,
+    "total_lumens_source": "stated_in_description",
+    "input_watts": 4.3,
+    "efficacy_lm_per_w": 44.8,
+    "cct_k": 2700,
+    "cri": "TODO_confirm_cri_check_datasheet",
+    "beam_angle_deg": 0.0,
+    "mounting_type": "floor_standing",
+    "suitable_roles": [
+      "decorative_portable"
+    ],
+    "include_in_automated_matching": false,
+    "application": "TODO_assign_room_types",
+    "aesthetic_tags": [
+      "TODO_assign_style_tags"
+    ],
+    "price": "TODO_add_price",
+    "source_ies_file": "su33-01_l394.ies"
+  }
+]

@@ -1,0 +1,147 @@
+[
+  {
+    "room_id": "2H5YeoVaROWb0biZuwK43Q",
+    "application": "living_room",
+    "polygon": [
+      [
+        0.115,
+        -6.435
+      ],
+      [
+        3.3400000000000003,
+        -6.435
+      ],
+      [
+        3.3400000000000003,
+        -1.5999999999999996
+      ],
+      [
+        0.115,
+        -1.5999999999999996
+      ]
+    ],
+    "ceiling_height_m": 2.9,
+    "task_height_m": 0.8,
+    "target_lux": 200,
+    "cct_k": 2700,
+    "min_cri": 80,
+    "maintenance_factor": 0.8,
+    "cct_tolerance_k": 500
+  },
+  {
+    "room_id": "2DauxQOeCKezQCl7Qyokxz",
+    "application": "bathroom",
+    "polygon": [
+      [
+        3.46,
+        -5.64
+      ],
+      [
+        5.45,
+        -5.64
+      ],
+      [
+        5.45,
+        -1.5999999999999996
+      ],
+      [
+        3.46,
+        -1.5999999999999996
+      ]
+    ],
+    "ceiling_height_m": 2.9,
+    "task_height_m": 0.8,
+    "target_lux": 200,
+    "cct_k": 3500,
+    "min_cri": 80,
+    "maintenance_factor": 0.8,
+    "cct_tolerance_k": 500
+  },
+  {
+    "room_id": "2uLKrCtOwC3IJU_JuId3xY",
+    "application": "entry_hall",
+    "polygon": [
+      [
+        2.26,
+        -1.4
+      ],
+      [
+        5.449999999999999,
+        -1.4
+      ],
+      [
+        5.449999999999999,
+        -0.11499999999999999
+      ],
+      [
+        2.26,
+        -0.11499999999999999
+      ]
+    ],
+    "ceiling_height_m": 2.9,
+    "task_height_m": 0.8,
+    "target_lux": 150,
+    "cct_k": 3000,
+    "min_cri": 80,
+    "maintenance_factor": 0.8,
+    "cct_tolerance_k": 500
+  },
+  {
+    "room_id": "3UoVmhGEdDmBSRFIrnp8ON",
+    "application": "bedroom",
+    "polygon": [
+      [
+        5.65,
+        -4.55
+      ],
+      [
+        9.635,
+        -4.55
+      ],
+      [
+        9.635,
+        -0.11500000000000021
+      ],
+      [
+        5.65,
+        -0.11500000000000021
+      ]
+    ],
+    "ceiling_height_m": 2.9,
+    "task_height_m": 0.8,
+    "target_lux": 150,
+    "cct_k": 2700,
+    "min_cri": 80,
+    "maintenance_factor": 0.8,
+    "cct_tolerance_k": 500
+  },
+  {
+    "room_id": "3aIzdL6swdAd6pIWvp8W6H",
+    "application": "closet",
+    "polygon": [
+      [
+        5.65,
+        -6.435
+      ],
+      [
+        9.635,
+        -6.435
+      ],
+      [
+        9.635,
+        -4.55
+      ],
+      [
+        5.65,
+        -4.55
+      ]
+    ],
+    "ceiling_height_m": 2.9,
+    "task_height_m": 0.8,
+    "target_lux": 150,
+    "cct_k": 3500,
+    "min_cri": 80,
+    "maintenance_factor": 0.8,
+    "cct_tolerance_k": 500
+  }
+]

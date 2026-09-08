@@ -1,0 +1,7 @@
+room_id,application,target_lux,fixtures_matched,fixtures_total,lumens_delivered,lumens_required,pct_of_target,total_cost,total_watts,status
+2H5YeoVaROWb0biZuwK43Q,living_room,200,4,4,4272,8530,50%,312.00,38.0,UNDER-LIT -- 50% of target
+3UoVmhGEdDmBSRFIrnp8ON,bedroom,150,4,4,4272,7096,60%,312.00,38.0,UNDER-LIT -- 60% of target
+2DauxQOeCKezQCl7Qyokxz,bathroom,200,0,2,0,4740,0%,0.00,0.0,INCOMPLETE -- 2 fixture(s) unmatched
+3aIzdL6swdAd6pIWvp8W6H,closet,150,0,2,0,3345,0%,0.00,0.0,INCOMPLETE -- 2 fixture(s) unmatched
+
+TOTAL,,,,,,,,624.00,76.0,
