@@ -102,9 +102,16 @@ class LightingPosition:
     role: str = "ambient"             # e.g. "ambient", "wall_wash", "accent" -- from CAD layer
 
 
-def match_positions_to_catalog(rooms, positions, catalog, style_profile=None):
+DEFAULT_WEIGHTS = {"lumen_fit": 0.4, "efficacy": 0.2, "cri_margin": 0.1, "aesthetic": 0.2, "cost": 0.1}
+
+
+def match_positions_to_catalog(rooms, positions, catalog, style_profile=None, weights=None):
     """Returns {position_id: {product, score, required_lumens_per_fixture,
-    room_index, utilization_factor, candidates_considered}}"""
+    room_index, utilization_factor, candidates_considered}}
+    weights: optional dict overriding DEFAULT_WEIGHTS -- lets you bias
+    matching toward cost, aesthetics, efficacy, etc. Missing keys fall
+    back to the default for that criterion."""
+    weights = {**DEFAULT_WEIGHTS, **(weights or {})}
     rooms_by_id = {r.room_id: r for r in rooms}
     positions_by_group = {}
     for p in positions:
@@ -134,7 +141,7 @@ def match_positions_to_catalog(rooms, positions, catalog, style_profile=None):
         strict_band = (role == "ambient")
         candidates = _filter_catalog(catalog, room, group_positions[0], required_lumens, strict_band)
         scored = sorted(
-            ((_score_candidate(c, required_lumens, room, style_profile), c) for c in candidates),
+            ((_score_candidate(c, required_lumens, room, style_profile, weights), c) for c in candidates),
             key=lambda t: t[0], reverse=True,
         )
         best_score, best = (scored[0] if scored else (None, None))
@@ -154,6 +161,7 @@ def match_positions_to_catalog(rooms, positions, catalog, style_profile=None):
 def _filter_catalog(catalog, room, sample_position, required_lumens, strict_band=True):
     out = []
     lo, hi = (0.5, 2.0) if strict_band else (0.05, 20.0)
+    warned = set()
     for c in catalog:
         applications = c.get("application")
         if applications:
@@ -165,19 +173,39 @@ def _filter_catalog(catalog, room, sample_position, required_lumens, strict_band
                 continue
         if c.get("mounting_type") and c["mounting_type"] != sample_position.mounting_type:
             continue
-        if c.get("cri", 0) < room.min_cri:
-            continue
+
+        # Products can carry an unfilled "TODO_..." placeholder (e.g. from
+        # select_and_add_from_ieslibrary.py, when CRI/CCT wasn't stated in
+        # the source file's text) instead of a real number. Comparing a
+        # string to an int crashes outright -- exclude the product instead,
+        # since matching against an unverified spec would be worse than not
+        # matching at all. Warn once per product so this isn't silent.
+        cri = c.get("cri", 0)
         cct = c.get("cct_k")
+        lumens = c.get("total_lumens", 0)
+        if not all(isinstance(v, (int, float)) for v in (cri, lumens) if v is not None) or \
+           (cct is not None and not isinstance(cct, (int, float))):
+            pid = c.get("product_id", "?")
+            if pid not in warned:
+                print(f"NOTE: excluding '{pid}' from matching -- it has an unfilled "
+                      f"TODO_ placeholder instead of a real number (cri={cri!r}, "
+                      f"cct_k={cct!r}, total_lumens={lumens!r}). Fix it in catalog.json "
+                      f"to have this product considered.")
+                warned.add(pid)
+            continue
+
+        if cri < room.min_cri:
+            continue
         if cct is not None and abs(cct - room.cct_k) > room.cct_tolerance_k:
             continue
-        lumens = c.get("total_lumens", 0)
         if lumens < required_lumens * lo or lumens > required_lumens * hi:
             continue
         out.append(c)
     return out
 
 
-def _score_candidate(c, required_lumens, room, style_profile=None):
+def _score_candidate(c, required_lumens, room, style_profile=None, weights=None):
+    weights = weights or DEFAULT_WEIGHTS
     lumens = c.get("total_lumens", 1)
     watts = c.get("input_watts", 1) or 1
     efficacy = lumens / watts
@@ -188,8 +216,9 @@ def _score_candidate(c, required_lumens, room, style_profile=None):
     aesthetic = _aesthetic_fit(c.get("aesthetic_tags", []), style_profile)
     cost_norm = 1 - min((c.get("price", 0) or 0) / 500.0, 1.0)
 
-    return (0.4 * lumen_fit + 0.2 * efficacy_norm + 0.1 * cri_margin +
-            0.2 * aesthetic + 0.1 * cost_norm)
+    return (weights["lumen_fit"] * lumen_fit + weights["efficacy"] * efficacy_norm +
+            weights["cri_margin"] * cri_margin + weights["aesthetic"] * aesthetic +
+            weights["cost"] * cost_norm)
 
 
 def _aesthetic_fit(product_tags, style_profile):

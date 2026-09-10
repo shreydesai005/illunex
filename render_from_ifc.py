@@ -225,13 +225,60 @@ def build_scene_from_real_data(room_id, rooms_path="rooms.json", positions_path=
                             f"no .ies file found at '{ies_file}')")
             continue
         local_pos = (pos.x - min_x, pos.y - min_y, pos.z)
-        lights.append(load_ies_light(ies_file, local_pos))
+        light = load_ies_light(ies_file, local_pos)
+        # Extra metadata beyond what render() itself needs -- harmless for
+        # rendering (candela_at_direction etc. only read known keys), but
+        # lets callers report exactly which real product/position produced
+        # this light, instead of that information being print-only and lost.
+        light["position_id"] = pos.position_id
+        light["product_id"] = product.get("product_id")
+        light["input_watts"] = product.get("input_watts")
+        light["price"] = product.get("price")
+        lights.append(light)
 
     if skipped:
         print(f"WARNING: {len(skipped)} position(s) not rendered (no match or missing "
               f"IES file): {skipped}")
 
     return width, depth, height, lights
+
+
+def get_fixture_view(lights, width, depth, height, fov_deg=55):
+    """Aims the camera directly at ONE specific real fixture's exact
+    position -- not an averaged centroid, which can land in a gap between
+    fixtures for irregular rooms/grids and miss every disc. Tested: a
+    centroid-based aim failed to clearly show any fixture in a real
+    9-fixture test case; aiming at one exact position is what actually
+    guarantees visibility."""
+    if not lights:
+        raise ValueError("No lights to aim at")
+
+    target_light = lights[len(lights) // 2]  # pick one specific real fixture
+    target_pos = target_light["position"]
+
+    cam_pos = (width * 0.1, depth * 0.1, 1.4)
+    look_at = target_pos
+    return {"cam_pos": cam_pos, "look_at": look_at, "fov_deg": fov_deg}
+
+
+def get_views(width, depth, height):
+    """Camera presets, scaled to this room's actual dimensions. Extracted
+    into its own function (rather than inline in main()) so other scripts
+    can reuse the exact same views without duplicating this logic."""
+    return {
+        "corner": {"cam_pos": (width * 0.1, depth * 0.1, 1.5),
+                   "look_at": (width * 0.6, depth * 0.85, 1.0), "fov_deg": 75},
+        "top": {"cam_pos": (width / 2, depth / 2, height - 0.05),
+                "look_at": (width / 2, depth / 2, 0.0), "fov_deg": 100},
+        "bottom": {"cam_pos": (width / 2, depth / 2, 0.1),
+                   "look_at": (width / 2, depth / 2, height), "fov_deg": 55},
+        "bottom_worms_eye": {"cam_pos": (width * 0.15, depth * 0.15, 0.15),
+                              "look_at": (width * 0.7, depth * 0.7, height), "fov_deg": 85},
+        "side": {"cam_pos": (0.1, depth / 2, height / 2),
+                 "look_at": (width, depth / 2, height / 2), "fov_deg": 80},
+        "front": {"cam_pos": (width / 2, 0.1, height / 2),
+                  "look_at": (width / 2, depth, height / 2), "fov_deg": 80},
+    }
 
 
 def main():
@@ -264,20 +311,9 @@ def main():
         print("No lights to render -- check the warnings above.")
         return
 
-    views = {
-        "corner": {"cam_pos": (width * 0.1, depth * 0.1, 1.5),
-                   "look_at": (width * 0.6, depth * 0.85, 1.0), "fov_deg": 75},
-        "top": {"cam_pos": (width / 2, depth / 2, height - 0.05),
-                "look_at": (width / 2, depth / 2, 0.0), "fov_deg": 100},
-        "bottom": {"cam_pos": (width / 2, depth / 2, 0.1),
-                   "look_at": (width / 2, depth / 2, height), "fov_deg": 55},
-        "bottom_worms_eye": {"cam_pos": (width * 0.15, depth * 0.15, 0.15),
-                              "look_at": (width * 0.7, depth * 0.7, height), "fov_deg": 85},
-        "side": {"cam_pos": (0.1, depth / 2, height / 2),
-                 "look_at": (width, depth / 2, height / 2), "fov_deg": 80},
-        "front": {"cam_pos": (width / 2, 0.1, height / 2),
-                  "look_at": (width / 2, depth, height / 2), "fov_deg": 80},
-    }
+    views = get_views(width, depth, height)
+    if "fixtures" in requested_views:
+        views["fixtures"] = get_fixture_view(lights, width, depth, height)
 
     for view_name in requested_views:
         if view_name not in views:

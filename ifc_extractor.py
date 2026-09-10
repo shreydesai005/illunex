@@ -57,11 +57,25 @@ import ifcopenshell.geom
 from position_matcher import RoomRequirement, LightingPosition
 
 
+def _safe_by_type(model, entity_type):
+    """Some entity types don't exist in older IFC schemas -- IfcLightFixture
+    is an IFC4+ addition, not valid in IFC2X3, and querying for it there
+    crashes with a RuntimeError rather than just returning nothing. Confirmed
+    against a real IFC2X3 file: this returns an empty list instead of
+    crashing, so schema-version differences degrade gracefully instead of
+    stopping the whole script."""
+    try:
+        return model.by_type(entity_type)
+    except RuntimeError:
+        return []
+
+
 def inspect_file(ifc_path: str):
     """Run this FIRST against your real file to see what's actually in it."""
     model = ifcopenshell.open(ifc_path)
+    print(f"IFC schema version: {model.schema}")
     for entity_type in ("IfcSpace", "IfcLightFixture", "IfcFlowTerminal", "IfcBuildingElementProxy"):
-        entities = model.by_type(entity_type)
+        entities = _safe_by_type(model, entity_type)
         print(f"{entity_type}: {len(entities)} found")
         for e in entities[:3]:
             print(f"  - GlobalId={e.GlobalId}, Name={getattr(e, 'Name', None)}, "
@@ -186,11 +200,22 @@ def extract_positions(ifc_path: str, rooms: list) -> list:
     room_ids = {r.room_id for r in rooms}
     positions = []
 
-    fixtures = model.by_type("IfcLightFixture")
+    fixtures = _safe_by_type(model, "IfcLightFixture")
     if not fixtures:
-        print("No IfcLightFixture entities found -- check inspect_file() output "
-              "for what entity type your fixtures actually use, and adjust "
-              "the by_type() call above accordingly.")
+        # IfcLightFixture doesn't exist at all in IFC2X3 (confirmed against
+        # a real file) -- older-schema files typically represent fixtures as
+        # a generic IfcFlowTerminal or IfcBuildingElementProxy instead, with
+        # the fixture-ness only identifiable from the Name/ObjectType text.
+        # Filter for "light" as a reasonable starting heuristic; adjust to
+        # match what inspect_file() actually shows for your file's naming.
+        print("No IfcLightFixture entities (may not exist in this file's schema -- "
+              "IfcLightFixture is IFC4+ only). Falling back to IfcFlowTerminal/"
+              "IfcBuildingElementProxy entities whose Name mentions 'light'.")
+        candidates = _safe_by_type(model, "IfcFlowTerminal") + _safe_by_type(model, "IfcBuildingElementProxy")
+        fixtures = [c for c in candidates if "light" in (c.Name or "").lower()]
+        print(f"Found {len(fixtures)} fallback candidate(s) this way -- verify these "
+              f"are really light fixtures and not, say, light switches or other "
+              f"'light'-named non-fixture elements, then adjust the filter if needed.")
 
     for fixture in fixtures:
         role, mounting_type, include = _classify_fixture(fixture)

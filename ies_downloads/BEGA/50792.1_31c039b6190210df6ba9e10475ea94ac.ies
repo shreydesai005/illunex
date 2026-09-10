@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<!-- 
+	IES-Library by swisscode.sk 2024
+
+	This website is powered by TYPO3 - inspiring people to share!
+	TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
+	TYPO3 is copyright 1998-2026 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
+	Information and contribution at https://typo3.org/
+-->
+
+
+
+
+<meta name="generator" content="TYPO3 CMS">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" href="/typo3temp/assets/compressed/merged-169dc9eca599e88f7d69527e2b3c94c4.css?1761319223" media="all">
+
+
+
+<script src="/typo3temp/assets/compressed/merged-895159ee61d2aa7b4e5a02123adeb2f2.js?1721916274" type="text/javascript"></script>
+
+
+
+
+<title>IES-Library: Browse</title><meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="apple-touch-icon" sizes="180x180" href="/typo3conf/ext/customext/Resources/Public/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/typo3conf/ext/customext/Resources/Public/favicon/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/typo3conf/ext/customext/Resources/Public/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/typo3conf/ext/customext/Resources/Public/favicon/favicon-16x16.png">
+<link rel="manifest" href="/typo3conf/ext/customext/Resources/Public/favicon/site.webmanifest">
+<link rel="mask-icon" href="/typo3conf/ext/customext/Resources/Public/favicon/safari-pinned-tab.svg" color="#000000">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="/typo3conf/ext/customext/Resources/Public/favicon/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">IES-Library
+<link rel="canonical" href="https://ieslibrary.com/browse?tx_jfiesmng_iesplugin%5Baction%5D=download&amp;tx_jfiesmng_iesplugin%5Bcontroller%5D=Ies&amp;cHash=df4cab1fd6ed1fc09c38d1e71be42c24"/>
+
+<link rel="alternate" hreflang="en-US" href="https://ieslibrary.com/browse?tx_jfiesmng_iesplugin%5Baction%5D=download&amp;tx_jfiesmng_iesplugin%5Bcontroller%5D=Ies&amp;cHash=df4cab1fd6ed1fc09c38d1e71be42c24"/>
+<link rel="alternate" hreflang="de-DE" href="https://ieslibrary.com/de/durchsuchen?tx_jfiesmng_iesplugin%5Baction%5D=download&amp;tx_jfiesmng_iesplugin%5Bcontroller%5D=Ies&amp;cHash=df4cab1fd6ed1fc09c38d1e71be42c24"/>
+<link rel="alternate" hreflang="x-default" href="https://ieslibrary.com/browse?tx_jfiesmng_iesplugin%5Baction%5D=download&amp;tx_jfiesmng_iesplugin%5Bcontroller%5D=Ies&amp;cHash=df4cab1fd6ed1fc09c38d1e71be42c24"/>
+<script>if(typeof _paq==="undefined"||!(_paq instanceof Array))var _paq=[];_paq.push(["setDoNotTrack",true]);_paq.push(["trackPageView"]);_paq.push(["enableLinkTracking"]);(function(){var u="https://matomo.swisscode.sk/";_paq.push(["setTrackerUrl",u+"matomo.php"]);_paq.push(["setSiteId",8]);var d=document,g=d.createElement("script"),s=d.getElementsByTagName("script")[0];g.async=true;g.src=u+"matomo.js";s.parentNode.insertBefore(g,s);})();</script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-xl navbar-dark bg-primary fixed-top px-2">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="/"><strong class="mx-1"><img src="/typo3conf/ext/jf_ies_mng/Resources/Public/Images/logo-dark.svg" width="141" height="26"  class="d-block mx-auto logo-img"  alt="IES-Library" ></strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse"><ul class="navbar-nav me-auto" role="menu"><li class="nav-item active"><a href="/browse" class="nav-link" role="menuitem">Browse</a></li><li class="nav-item"><a href="/manufacturer" class="nav-link" role="menuitem">Manufacturer</a></li><li class="nav-item"><a href="/pricing" class="nav-link" role="menuitem">Pricing</a></li><li class="nav-item dropdown"><a href="/help/how-to-use-ies-in-blender" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Help</a><div class="dropdown-menu" role="menu"><a href="/help/how-to-use-ies-in-blender" class="dropdown-item" role="menuitem">How to use IES in Blender?</a><a href="/help/i-need-ldt-instead" class="dropdown-item" role="menuitem">I Need LDT instead!</a><a href="/help/licenses" class="dropdown-item" role="menuitem">Licenses</a></div></li><li class="nav-item"><a href="/contact" class="nav-link" role="menuitem">Contact</a></li><li class="nav-item"><a href="/about" class="nav-link" role="menuitem">About</a></li><li class="nav-item dropdown"><a href="/spotlight/liv" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Spotlight</a><div class="dropdown-menu" role="menu"><a href="/spotlight/liv" class="dropdown-item" role="menuitem">LIV</a><a href="/spotlight/luminous-algocom" class="dropdown-item" role="menuitem">luminous-algo.com</a><a href="/spotlight/e-labelonline" class="dropdown-item" role="menuitem">e-label.online</a></div></li></ul><ul class="navbar-nav ms-auto">
+    
+            <!-- Not logged in... -->
+            
+                <li class="nav-item">
+                    <a href="/login-menu/login" class="nav-link">Login - Register</a>
+                </li>
+            
+        
+</ul>
+
+
+    
+            <div class="d-flex mt-auto">
+                
+                    <a  href="/browse?tx_jfiesmng_iesplugin%5Baction%5D=download&amp;tx_jfiesmng_iesplugin%5Bcontroller%5D=Ies&amp;cHash=df4cab1fd6ed1fc09c38d1e71be42c24" hreflang="en-US" class="text-decoration-none ms-2 p-2  fw-bold" title="English">
+                        EN
+                    </a>
+                
+                    <a  href="/de/durchsuchen?tx_jfiesmng_iesplugin%5Baction%5D=download&amp;tx_jfiesmng_iesplugin%5Bcontroller%5D=Ies&amp;cHash=df4cab1fd6ed1fc09c38d1e71be42c24" hreflang="de-DE" class="text-decoration-none ms-2 p-2 " title="DE">
+                        DE
+                    </a>
+                
+            </divul>
+        
+
+
+                </div>
+            </div>
+        </nav>
+    </header><main><div class="container pt-3">
+<div id="c1" class="frame frame-default frame-type-list frame-layout-0"><div class="tx-jf-ies-mng"><div class="alert alert-info">
+		The download will start in 5 seconds. If the download does not start automatically, please click the download link...
+	</div><div class="text-center mb-5"><a href="/browse/download/ies/31c039b6190210df6ba9e10475ea94ac/dbd7719cd6f6a5345c4f6f150bbe078910c9d61ec4706f415d78cf6d4fb2ada0?cHash=6694099a58feeaf6e1faabd4742a1db7" disabled="true" class="btn btn-primary btn-lg download-button disabled"><i class="fas fa-circle-notch fa-spin loading-icon"></i><i class="fas fa-cloud-arrow-down download-icon" hidden="true"></i><span class="ms-1">
+				
+						Download IES
+					
+			</span></a></div><div class="row mb-4"><div class="col-lg-6 mb-3 mb-lg-0"><img src="/ies/BEGA/31c039b6190210df6ba9e10475ea94ac.jpg" class="img-fluid shadow rounded"></div><div class="col-lg-6"><ul class="list-group list-group-flush"><li class="list-group-item"><small>Hash</small><p>31c039b6190210df6ba9e10475ea94ac</p></li><li class="list-group-item"><small>Lamp</small><p>11302 lm,114 W</p></li><li class="list-group-item"><small>Luminaire</small><p>50792.1</p></li><li class="list-group-item"><small>Energy value (blender)</small><p>0.005</p></li><li class="list-group-item"><small>Download Count</small><p>1420</p></li></ul></div></div><script type="text/javascript">
+		$(function () { //
+			$('.download-button').addClass('disabled');
+			$('.loading-icon').attr('hidden', null);
+			$('.download-icon').attr('hidden', true);
+
+			setTimeout(function () { //
+				$('.download-button').removeClass('disabled');
+				$('.loading-icon').attr('hidden', true);
+				$('.download-icon').attr('hidden', null);
+				var href = $('.download-button').attr('href');
+				window.location.href = href;
+			}, 5000);
+		})
+	</script></div></div>
+
+</div><div class="container pt-3">
+<div id="c168" class="frame frame-default frame-type-shortcut frame-layout-0"></div>
+
+</div></main>    <footer class="container py-5">
+        <div class="row">
+            <div class="col-12 col-md"><span>IES-Library</span><small class="d-block mb-3 text-muted">&copy;&nbsp;2020</small>            </div>
+<div class="col-6 col-md"><h3 class="fs-5">Manufacturers</h3><ul class="list-unstyled text-small"><li><a href="/en/browse/manufactur/efficient-lighting-systems" class="text-muted">Efficient Lighting Systems</a></li><li><a href="/en/browse/manufactur/simes-spa" class="text-muted">SIMES S.P.A.</a></li><li><a href="/en/browse/manufactur/erco-leuchten-gmbh" class="text-muted">ERCO Leuchten GmbH</a></li><li><a href="/en/browse/manufactur/cooper-lighting-solutions" class="text-muted">Cooper Lighting Solutions</a></li></ul></div><div class="col-6 col-md"><h3 class="fs-5">Filter</h3><ul class="list-unstyled text-small"><li><a href="/en/browse/tag/ceiling" class="text-muted">Ceiling</a></li><li><a href="/en/browse/tag/floodlight" class="text-muted">Floodlights</a></li><li><a href="/en/browse/tag/pendant" class="text-muted">Pendant</a></li><li><a href="/en/browse/tag/wall-washer" class="text-muted">Wall washer</a></li></ul></div><div class="col-6 col-md"><h3 class="fs-5">Community</h3><ul class="list-unstyled text-small"><li><a href="/contact" class="text-muted">Contact</a></li></ul></div><div class="col-6 col-md"><h3 class="fs-5">Miscellaneous</h3><ul class="list-unstyled text-small"><li><a href="/miscellaneous/data-protection" class="text-muted">Data protection</a></li><li><a href="/miscellaneous/terms-conditions" class="text-muted">Terms & Conditions</a></li><li><a href="/help/licenses" class="text-muted">Licenses</a></li></ul></div>        </div>
+    </footer>
+
+<script src="/typo3temp/assets/compressed/merged-d0637f7a9616e57923e332587a75d777.js?1766773879" type="text/javascript"></script>
+
+
+
+</body>
+</html>
