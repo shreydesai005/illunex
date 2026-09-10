@@ -1,82 +1,568 @@
 [
   {
-    "position_id": "gen_0B86jiIBn3u98mejBVhbOM_0",
-    "room_id": "0B86jiIBn3u98mejBVhbOM",
-    "x": 29.956,
-    "y": 6.025,
-    "z": 2.83750000000564,
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_0",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 7.927,
+    "y": 30.006,
+    "z": 2.9626857142814793,
     "mounting_type": "recessed_ceiling",
     "role": "ambient"
   },
   {
-    "position_id": "gen_0B86jiIBn3u98mejBVhbOM_1",
-    "room_id": "0B86jiIBn3u98mejBVhbOM",
-    "x": 31.752,
-    "y": 6.025,
-    "z": 2.83750000000564,
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_1",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 9.626,
+    "y": 30.006,
+    "z": 2.9626857142814793,
     "mounting_type": "recessed_ceiling",
     "role": "ambient"
   },
   {
-    "position_id": "gen_0B86jiIBn3u98mejBVhbOM_2",
-    "room_id": "0B86jiIBn3u98mejBVhbOM",
-    "x": 33.548,
-    "y": 6.025,
-    "z": 2.83750000000564,
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_2",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 11.325,
+    "y": 30.006,
+    "z": 2.9626857142814793,
     "mounting_type": "recessed_ceiling",
     "role": "ambient"
   },
   {
-    "position_id": "gen_0B86jiIBn3u98mejBVhbOM_3",
-    "room_id": "0B86jiIBn3u98mejBVhbOM",
-    "x": 29.956,
-    "y": 7.279,
-    "z": 2.83750000000564,
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_3",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 13.024,
+    "y": 30.006,
+    "z": 2.9626857142814793,
     "mounting_type": "recessed_ceiling",
     "role": "ambient"
   },
   {
-    "position_id": "gen_0B86jiIBn3u98mejBVhbOM_4",
-    "room_id": "0B86jiIBn3u98mejBVhbOM",
-    "x": 31.752,
-    "y": 7.279,
-    "z": 2.83750000000564,
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_4",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 14.723,
+    "y": 30.006,
+    "z": 2.9626857142814793,
     "mounting_type": "recessed_ceiling",
     "role": "ambient"
   },
   {
-    "position_id": "gen_0B86jiIBn3u98mejBVhbOM_5",
-    "room_id": "0B86jiIBn3u98mejBVhbOM",
-    "x": 33.548,
-    "y": 7.279,
-    "z": 2.83750000000564,
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_5",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 16.422,
+    "y": 30.006,
+    "z": 2.9626857142814793,
     "mounting_type": "recessed_ceiling",
     "role": "ambient"
   },
   {
-    "position_id": "gen_0B86jiIBn3u98mejBVhbOM_6",
-    "room_id": "0B86jiIBn3u98mejBVhbOM",
-    "x": 29.956,
-    "y": 8.534,
-    "z": 2.83750000000564,
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_6",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 18.12,
+    "y": 30.006,
+    "z": 2.9626857142814793,
     "mounting_type": "recessed_ceiling",
     "role": "ambient"
   },
   {
-    "position_id": "gen_0B86jiIBn3u98mejBVhbOM_7",
-    "room_id": "0B86jiIBn3u98mejBVhbOM",
-    "x": 31.752,
-    "y": 8.534,
-    "z": 2.83750000000564,
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_7",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 7.927,
+    "y": 31.737,
+    "z": 2.9626857142814793,
     "mounting_type": "recessed_ceiling",
     "role": "ambient"
   },
   {
-    "position_id": "gen_0B86jiIBn3u98mejBVhbOM_8",
-    "room_id": "0B86jiIBn3u98mejBVhbOM",
-    "x": 33.548,
-    "y": 8.534,
-    "z": 2.83750000000564,
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_8",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 9.626,
+    "y": 31.737,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_9",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 11.325,
+    "y": 31.737,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_10",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 13.024,
+    "y": 31.737,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_11",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 14.723,
+    "y": 31.737,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_12",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 16.422,
+    "y": 31.737,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_13",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 18.12,
+    "y": 31.737,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_14",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 7.927,
+    "y": 33.468,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_15",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 9.626,
+    "y": 33.468,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_16",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 11.325,
+    "y": 33.468,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_17",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 13.024,
+    "y": 33.468,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_18",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 14.723,
+    "y": 33.468,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_19",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 16.422,
+    "y": 33.468,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_20",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 18.12,
+    "y": 33.468,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_21",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 7.927,
+    "y": 35.199,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_22",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 9.626,
+    "y": 35.199,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_23",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 11.325,
+    "y": 35.199,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_24",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 13.024,
+    "y": 35.199,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_25",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 14.723,
+    "y": 35.199,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_26",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 16.422,
+    "y": 35.199,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_27",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 18.12,
+    "y": 35.199,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_28",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 7.927,
+    "y": 36.931,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_29",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 9.626,
+    "y": 36.931,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_30",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 11.325,
+    "y": 36.931,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_31",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 13.024,
+    "y": 36.931,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_32",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 14.723,
+    "y": 36.931,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_33",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 16.422,
+    "y": 36.931,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_34",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 18.12,
+    "y": 36.931,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_35",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 7.927,
+    "y": 38.662,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_36",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 9.626,
+    "y": 38.662,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_37",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 11.325,
+    "y": 38.662,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_38",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 13.024,
+    "y": 38.662,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_39",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 14.723,
+    "y": 38.662,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_40",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 16.422,
+    "y": 38.662,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_41",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 18.12,
+    "y": 38.662,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_42",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 7.927,
+    "y": 40.393,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_43",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 9.626,
+    "y": 40.393,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_44",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 11.325,
+    "y": 40.393,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_45",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 13.024,
+    "y": 40.393,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_46",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 14.723,
+    "y": 40.393,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_47",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 16.422,
+    "y": 40.393,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_48",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 18.12,
+    "y": 40.393,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_49",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 7.927,
+    "y": 42.124,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_50",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 9.626,
+    "y": 42.124,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_51",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 11.325,
+    "y": 42.124,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_52",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 13.024,
+    "y": 42.124,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_53",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 14.723,
+    "y": 42.124,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_54",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 16.422,
+    "y": 42.124,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_55",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 18.12,
+    "y": 42.124,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_56",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 7.927,
+    "y": 43.855,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_57",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 9.626,
+    "y": 43.855,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_58",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 11.325,
+    "y": 43.855,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_59",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 13.024,
+    "y": 43.855,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_60",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 14.723,
+    "y": 43.855,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_61",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 16.422,
+    "y": 43.855,
+    "z": 2.9626857142814793,
+    "mounting_type": "recessed_ceiling",
+    "role": "ambient"
+  },
+  {
+    "position_id": "gen_23KTH2r7b0_fhNEHe4Gizp_62",
+    "room_id": "23KTH2r7b0_fhNEHe4Gizp",
+    "x": 18.12,
+    "y": 43.855,
+    "z": 2.9626857142814793,
     "mounting_type": "recessed_ceiling",
     "role": "ambient"
   }

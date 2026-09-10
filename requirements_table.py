@@ -24,6 +24,10 @@ RESIDENTIAL_REQUIREMENTS = {
         "application": "living_room", "target_lux": 200,
         "cct_k": 2700, "min_cri": 80, "ceiling_height_m": 2.7,
     },
+    "kitchen": {
+        "application": "kitchen", "target_lux": 300,
+        "cct_k": 3500, "min_cri": 80, "ceiling_height_m": 2.7,
+    },
     "bedroom": {
         "application": "bedroom", "target_lux": 150,
         "cct_k": 2700, "min_cri": 80, "ceiling_height_m": 2.7,

@@ -200,5 +200,29 @@
     "source_ies_file": "ies_downloads/BEGA/50755.2K3_6573d05ba54f40764d1d1353c090e0ea.ies",
     "_source": "ieslibrary.com",
     "_download_count": 212
+  },
+  {
+    "product_id": "BEGA_51017.6K3_52221f67",
+    "manufacturer": "BEGA",
+    "description": "51017.6K3",
+    "total_lumens": 820.0,
+    "input_watts": 16.0,
+    "cct_k": "TODO_confirm_cct_check_datasheet",
+    "cri": "TODO_confirm_cri_check_datasheet",
+    "mounting_type": "recessed_ceiling",
+    "suitable_roles": [
+      "ambient"
+    ],
+    "application": [
+      "living_room"
+    ],
+    "aesthetic_tags": [
+      "TODO_assign_style_tags"
+    ],
+    "include_in_automated_matching": true,
+    "price": "TODO_add_price",
+    "source_ies_file": "ies_downloads/BEGA/51017.6K3_52221f6705e5f31cdcf71685519a2d42.ies",
+    "_source": "ieslibrary.com",
+    "_download_count": 182
   }
 ]
