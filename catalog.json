@@ -178,30 +178,6 @@
     "source_ies_file": "su33-01_l394.ies"
   },
   {
-    "product_id": "BEGA_50755.2K3_6573d05b",
-    "manufacturer": "BEGA",
-    "description": "50755.2K3",
-    "total_lumens": 821.0,
-    "input_watts": 14.0,
-    "cct_k": "TODO_confirm_cct_check_datasheet",
-    "cri": "TODO_confirm_cri_check_datasheet",
-    "mounting_type": "recessed_ceiling",
-    "suitable_roles": [
-      "ambient"
-    ],
-    "application": [
-      "bedroom"
-    ],
-    "aesthetic_tags": [
-      "TODO_assign_style_tags"
-    ],
-    "include_in_automated_matching": true,
-    "price": "TODO_add_price",
-    "source_ies_file": "ies_downloads/BEGA/50755.2K3_6573d05ba54f40764d1d1353c090e0ea.ies",
-    "_source": "ieslibrary.com",
-    "_download_count": 212
-  },
-  {
     "product_id": "BEGA_51017.6K3_52221f67",
     "manufacturer": "BEGA",
     "description": "51017.6K3",
@@ -224,5 +200,101 @@
     "source_ies_file": "ies_downloads/BEGA/51017.6K3_52221f6705e5f31cdcf71685519a2d42.ies",
     "_source": "ieslibrary.com",
     "_download_count": 182
+  },
+  {
+    "product_id": "BEGA_51012.6K3_b26875c6",
+    "manufacturer": "BEGA",
+    "description": "51012.6K3",
+    "total_lumens": 820.0,
+    "input_watts": 16.0,
+    "cct_k": "TODO_confirm_cct_check_datasheet",
+    "cri": "TODO_confirm_cri_check_datasheet",
+    "mounting_type": "recessed_ceiling",
+    "suitable_roles": [
+      "ambient"
+    ],
+    "application": [
+      "living_room"
+    ],
+    "aesthetic_tags": [
+      "TODO_assign_style_tags"
+    ],
+    "include_in_automated_matching": true,
+    "price": "TODO_add_price",
+    "source_ies_file": "ies_downloads/BEGA/51012.6K3_b26875c64b19e7d2e285a1d5c9fe2dbc.ies",
+    "_source": "ieslibrary.com",
+    "_download_count": 73
+  },
+  {
+    "product_id": "BEGA_50755.2K3_6573d05b",
+    "manufacturer": "BEGA",
+    "description": "50755.2K3",
+    "total_lumens": 821.0,
+    "input_watts": 14.0,
+    "cct_k": "TODO_confirm_cct_check_datasheet",
+    "cri": "TODO_confirm_cri_check_datasheet",
+    "mounting_type": "recessed_ceiling",
+    "suitable_roles": [
+      "ambient"
+    ],
+    "application": [
+      "living_room"
+    ],
+    "aesthetic_tags": [
+      "TODO_assign_style_tags"
+    ],
+    "include_in_automated_matching": true,
+    "price": "TODO_add_price",
+    "source_ies_file": "ies_downloads/BEGA/50755.2K3_6573d05ba54f40764d1d1353c090e0ea.ies",
+    "_source": "ieslibrary.com",
+    "_download_count": 212
+  },
+  {
+    "product_id": "BEGA_50818.2K3_7c76503c",
+    "manufacturer": "BEGA",
+    "description": "50818.2K3",
+    "total_lumens": 821.0,
+    "input_watts": 14.0,
+    "cct_k": "TODO_confirm_cct_check_datasheet",
+    "cri": "TODO_confirm_cri_check_datasheet",
+    "mounting_type": "recessed_ceiling",
+    "suitable_roles": [
+      "ambient"
+    ],
+    "application": [
+      "living_room"
+    ],
+    "aesthetic_tags": [
+      "TODO_assign_style_tags"
+    ],
+    "include_in_automated_matching": true,
+    "price": "TODO_add_price",
+    "source_ies_file": "ies_downloads/BEGA/50818.2K3_7c76503cbc2f5f19f7091a38fd4b2fab.ies",
+    "_source": "ieslibrary.com",
+    "_download_count": 159
+  },
+  {
+    "product_id": "BEGA_99326K3_4b256ed0",
+    "manufacturer": "BEGA",
+    "description": "99326K3",
+    "total_lumens": 817.0,
+    "input_watts": 14.0,
+    "cct_k": "TODO_confirm_cct_check_datasheet",
+    "cri": "TODO_confirm_cri_check_datasheet",
+    "mounting_type": "recessed_ceiling",
+    "suitable_roles": [
+      "ambient"
+    ],
+    "application": [
+      "living_room"
+    ],
+    "aesthetic_tags": [
+      "TODO_assign_style_tags"
+    ],
+    "include_in_automated_matching": true,
+    "price": "TODO_add_price",
+    "source_ies_file": "ies_downloads/BEGA/99326K3_4b256ed0bdf394c68f6a1bcb7b7f66aa.ies",
+    "_source": "ieslibrary.com",
+    "_download_count": 26
   }
 ]

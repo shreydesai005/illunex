@@ -261,6 +261,20 @@ def get_fixture_view(lights, width, depth, height, fov_deg=55):
     return {"cam_pos": cam_pos, "look_at": look_at, "fov_deg": fov_deg}
 
 
+def get_full_room_view(width, depth, height, eye_height_fraction=0.55):
+    """A wide, deliberately-composed overview shot showing the whole room
+    at once -- floor, walls, ceiling, and fixtures -- unlike get_views()'s
+    'corner' (not verified to fit large/irregular rooms) or
+    get_fixture_view() (deliberately narrow, built for verification
+    close-ups, not a good look at the room). Positioned near one corner,
+    slightly elevated for a natural surveying angle, aimed at the diagonal
+    opposite corner with a wide FOV similar to real-estate wide-angle
+    photography, which exists for exactly this purpose."""
+    cam_pos = (width * 0.06, depth * 0.06, height * eye_height_fraction)
+    look_at = (width * 0.94, depth * 0.94, height * 0.35)
+    return {"cam_pos": cam_pos, "look_at": look_at, "fov_deg": 100}
+
+
 def get_views(width, depth, height):
     """Camera presets, scaled to this room's actual dimensions. Extracted
     into its own function (rather than inline in main()) so other scripts
@@ -314,14 +328,22 @@ def main():
     views = get_views(width, depth, height)
     if "fixtures" in requested_views:
         views["fixtures"] = get_fixture_view(lights, width, depth, height)
+    if "full_room" in requested_views:
+        views["full_room"] = get_full_room_view(width, depth, height)
 
     for view_name in requested_views:
         if view_name not in views:
             print(f"Unknown view '{view_name}', skipping.")
             continue
         v = views[view_name]
+        # full_room renders every light per pixel -- with many fixtures
+        # (tested: 72 lights took 5+ minutes at supersample=2, timing out),
+        # supersampling's 4x cost isn't worth it for a general overview shot
+        # the way it is for guaranteeing a tiny fixture disc gets hit.
+        supersample = 1 if view_name == "full_room" else 2
         render(lights, v["cam_pos"], v["look_at"], width, depth, height,
-               fov_deg=v["fov_deg"], out_path=f"render_{room_id[:8]}_{view_name}.png")
+               fov_deg=v["fov_deg"], out_path=f"render_{room_id[:8]}_{view_name}.png",
+               supersample=supersample)
 
 
 if __name__ == "__main__":

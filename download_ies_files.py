@@ -47,6 +47,9 @@ DEFAULT_WORKERS = 4
 HEADERS = {
     "User-Agent": "ies-library-downloader/0.1 (personal lighting-design project; "
                    "respectful pacing, resumable)",
+    "Referer": "https://ieslibrary.com/browse",  # same fix as select_and_add_from_ieslibrary.py --
+    # missing before, likely why downloads were returning the site's HTML page
+    # instead of the real file.
 }
 
 

@@ -105,6 +105,60 @@ class LightingPosition:
 DEFAULT_WEIGHTS = {"lumen_fit": 0.4, "efficacy": 0.2, "cri_margin": 0.1, "aesthetic": 0.2, "cost": 0.1}
 
 
+def _score_group_candidates(room, group_positions, role, catalog, style_profile, weights):
+    """Shared computation for one (room, role) group: required lumens per
+    fixture, then filtered + scored candidates sorted best-first. Both
+    match_positions_to_catalog() (top-1) and get_top_candidates() (top-N)
+    are built on this, so there's one source of truth for the math."""
+    area = polygon_area(room.polygon)
+    n_fixtures = len(group_positions)
+
+    mount_h = max(room.ceiling_height_m - room.task_height_m, 0.5)
+    length, width = _bbox_length_width(room.polygon)
+    k = room_index(length, width, mount_h)
+    uf = estimate_utilization_factor(k)
+
+    required_lumens = (room.target_lux * area) / max(n_fixtures * uf * room.maintenance_factor, 1e-6)
+
+    strict_band = (role == "ambient")
+    candidates = _filter_catalog(catalog, room, group_positions[0], required_lumens, strict_band)
+    scored = sorted(
+        ((_score_candidate(c, required_lumens, room, style_profile, weights), c) for c in candidates),
+        key=lambda t: t[0], reverse=True,
+    )
+    return scored, required_lumens, k, uf
+
+
+def get_top_candidates(rooms, positions, catalog, style_profile=None, weights=None, top_n=6):
+    """Like match_positions_to_catalog, but returns the top N scored
+    candidates per (room, role) group instead of forcing a single pick --
+    for presenting several real options side by side. Positions sharing
+    the same room+role get the same ranked list, since they're evaluated
+    identically (they share required_lumens and the catalog filter)."""
+    weights = {**DEFAULT_WEIGHTS, **(weights or {})}
+    rooms_by_id = {r.room_id: r for r in rooms}
+    positions_by_group = {}
+    for p in positions:
+        positions_by_group.setdefault((p.room_id, p.role), []).append(p)
+
+    results = {}
+    for (room_id, role), group_positions in positions_by_group.items():
+        room = rooms_by_id[room_id]
+        scored, required_lumens, k, uf = _score_group_candidates(
+            room, group_positions, role, catalog, style_profile, weights)
+
+        results[(room_id, role)] = {
+            "room_application": room.application,
+            "position_ids": [p.position_id for p in group_positions],
+            "required_lumens_per_fixture": round(required_lumens, 1),
+            "room_index": round(k, 2),
+            "utilization_factor": uf,
+            "candidates": [{"score": round(s, 4), "product": c} for s, c in scored[:top_n]],
+            "total_candidates_considered": len(scored),
+        }
+    return results
+
+
 def match_positions_to_catalog(rooms, positions, catalog, style_profile=None, weights=None):
     """Returns {position_id: {product, score, required_lumens_per_fixture,
     room_index, utilization_factor, candidates_considered}}
@@ -120,30 +174,8 @@ def match_positions_to_catalog(rooms, positions, catalog, style_profile=None, we
     results = {}
     for (room_id, role), group_positions in positions_by_group.items():
         room = rooms_by_id[room_id]
-        area = polygon_area(room.polygon)
-        n_fixtures = len(group_positions)
-
-        mount_h = max(room.ceiling_height_m - room.task_height_m, 0.5)
-        length, width = _bbox_length_width(room.polygon)
-        k = room_index(length, width, mount_h)
-        uf = estimate_utilization_factor(k)
-
-        required_lumens = (room.target_lux * area) / max(n_fixtures * uf * room.maintenance_factor, 1e-6)
-
-        # The lumen-method target above assumes this role is responsible for
-        # the room's general illuminance. That's true for "ambient" fixtures,
-        # but not for accent/wall-wash roles, which serve a separate design
-        # goal (e.g. vertical wall illuminance) and shouldn't be hard-filtered
-        # against a general-lux number computed for the whole room. A real
-        # system would carry a separate target per role; this demo only
-        # applies the strict lumen band to the ambient role and scores other
-        # roles more loosely.
-        strict_band = (role == "ambient")
-        candidates = _filter_catalog(catalog, room, group_positions[0], required_lumens, strict_band)
-        scored = sorted(
-            ((_score_candidate(c, required_lumens, room, style_profile, weights), c) for c in candidates),
-            key=lambda t: t[0], reverse=True,
-        )
+        scored, required_lumens, k, uf = _score_group_candidates(
+            room, group_positions, role, catalog, style_profile, weights)
         best_score, best = (scored[0] if scored else (None, None))
 
         for p in group_positions:
@@ -153,7 +185,7 @@ def match_positions_to_catalog(rooms, positions, catalog, style_profile=None, we
                 "required_lumens_per_fixture": round(required_lumens, 1),
                 "room_index": round(k, 2),
                 "utilization_factor": uf,
-                "candidates_considered": len(candidates),
+                "candidates_considered": len(scored),
             }
     return results
 
