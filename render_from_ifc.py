@@ -22,6 +22,7 @@ Usage: python3 render_from_ifc.py <room_id> [--views corner,front,top,...]
 import sys
 import math
 import json
+import random
 from pathlib import Path
 
 import numpy as np
@@ -122,7 +123,52 @@ FIXTURE_EMITTED_RADIANCE = 500.0
 WALL_ALBEDO, FLOOR_ALBEDO, CEILING_ALBEDO = 0.5, 0.3, 0.7
 
 
-def _trace_ray(cam_pos, ray_dir, lights, albedo_by_surface, width, depth, height):
+def _cosine_weighted_hemisphere_sample(normal, rng):
+    """Samples a direction from the cosine-weighted hemisphere around
+    `normal` -- the standard importance-sampling trick from
+    math_reference.pdf Section 2.5. With this specific sampling strategy,
+    f_r * cos(theta) / pdf collapses to just the albedo (a constant),
+    which is why the indirect-bounce formula below is a simple average
+    rather than needing the cosine/pdf terms explicitly."""
+    u1, u2 = rng.random(), rng.random()
+    r = math.sqrt(u1)
+    theta = 2 * math.pi * u2
+    local_x, local_y = r * math.cos(theta), r * math.sin(theta)
+    local_z = math.sqrt(max(0.0, 1 - u1))
+
+    # Build an orthonormal basis around `normal` to transform the local
+    # hemisphere sample into world space. Explicit float64 here matters --
+    # the room's axis-aligned surface normals are integer-typed numpy
+    # arrays (e.g. np.array([0, 0, 1])), and an in-place divide on an
+    # integer cross-product result crashes with a casting error.
+    normal = normal.astype(np.float64)
+    if abs(normal[2]) < 0.999:
+        tangent = np.cross(np.array([0.0, 0.0, 1.0]), normal)
+    else:
+        tangent = np.cross(np.array([1.0, 0.0, 0.0]), normal)
+    tangent = tangent / np.linalg.norm(tangent)
+    bitangent = np.cross(normal, tangent)
+
+    return local_x * tangent + local_y * bitangent + local_z * normal
+
+
+def _direct_illuminance_at(point, normal, lights):
+    """Direct-only illuminance at a point -- factored out so both the
+    primary ray hit and each indirect-bounce sample point can reuse it."""
+    total = 0.0
+    for light in lights:
+        to_light = light["position"] - point
+        dist = np.linalg.norm(to_light)
+        to_light_unit = to_light / dist
+        direction_from_light = -to_light_unit
+        candela = candela_at_direction(light, direction_from_light)
+        cos_incidence = max(0.0, np.dot(normal, to_light_unit))
+        total += (candela * cos_incidence) / (dist ** 2)
+    return total
+
+
+def _trace_ray(cam_pos, ray_dir, lights, albedo_by_surface, width, depth, height,
+                enable_gi=False, gi_samples=4, rng=None):
     hit = ray_box_intersect(cam_pos, ray_dir, width, depth, height)
     if hit is None:
         return 0.0
@@ -138,21 +184,35 @@ def _trace_ray(cam_pos, ray_dir, lights, albedo_by_surface, width, depth, height
         return FIXTURE_EMITTED_RADIANCE
 
     albedo = albedo_by_surface[surf_type]
-    total_radiance = 0.0
-    for light in lights:
-        to_light = light["position"] - point
-        dist = np.linalg.norm(to_light)
-        to_light_unit = to_light / dist
-        direction_from_light = -to_light_unit
-        candela = candela_at_direction(light, direction_from_light)
-        cos_incidence = max(0.0, np.dot(normal, to_light_unit))
-        illuminance = (candela * cos_incidence) / (dist ** 2)
-        total_radiance += illuminance * (albedo / math.pi)
+    direct_illuminance = _direct_illuminance_at(point, normal, lights)
+    total_radiance = direct_illuminance * (albedo / math.pi)
+
+    if enable_gi:
+        # Single-bounce indirect: sample the hemisphere above this point,
+        # see what each sample ray hits, and add that secondary point's
+        # own OUTGOING radiance (its direct illumination, converted via
+        # its own albedo) as indirect light arriving here. With
+        # cosine-weighted sampling this collapses to a plain average
+        # scaled by this surface's albedo -- see the docstring above.
+        indirect_sum = 0.0
+        for _ in range(gi_samples):
+            bounce_dir = _cosine_weighted_hemisphere_sample(normal, rng)
+            bounce_hit = ray_box_intersect(point + normal * 1e-4, bounce_dir, width, depth, height)
+            if bounce_hit is None:
+                continue
+            _, bounce_point, bounce_normal, bounce_surf_type = bounce_hit
+            bounce_albedo = albedo_by_surface[bounce_surf_type]
+            bounce_illuminance = _direct_illuminance_at(bounce_point, bounce_normal, lights)
+            indirect_sum += bounce_illuminance * (bounce_albedo / math.pi)
+        indirect_radiance = albedo * (indirect_sum / gi_samples)
+        total_radiance += indirect_radiance
+
     return total_radiance
 
 
 def render(lights, cam_pos, look_at, width, depth, height, fov_deg=75,
-           width_px=320, height_px=240, out_path="render.png", supersample=2):
+           width_px=320, height_px=240, out_path="render.png", supersample=2,
+           enable_gi=False, gi_samples=4, gi_seed=42):
     cam_pos = np.array(cam_pos, dtype=float)
     look_at = np.array(look_at, dtype=float)
     forward_raw = look_at - cam_pos
@@ -164,6 +224,10 @@ def render(lights, cam_pos, look_at, width, depth, height, fov_deg=75,
     image = np.zeros((height_px, width_px, 3), dtype=np.float32)
     albedo_by_surface = {"wall": WALL_ALBEDO, "floor": FLOOR_ALBEDO, "ceiling": CEILING_ALBEDO}
     offsets = [(i + 0.5) / supersample for i in range(supersample)]
+    # Fixed seed by default -- deterministic, reproducible renders rather
+    # than different noise every run, which would make before/after
+    # comparisons (like GI on vs off) harder to judge cleanly.
+    rng = random.Random(gi_seed)
 
     for py in range(height_px):
         for px in range(width_px):
@@ -175,7 +239,8 @@ def render(lights, cam_pos, look_at, width, depth, height, fov_deg=75,
                     ray_dir = forward + ndc_x * right + ndc_y * up
                     ray_dir /= np.linalg.norm(ray_dir)
                     radiance_sum += _trace_ray(cam_pos, ray_dir, lights, albedo_by_surface,
-                                                width, depth, height)
+                                                width, depth, height,
+                                                enable_gi=enable_gi, gi_samples=gi_samples, rng=rng)
             avg = radiance_sum / (supersample * supersample)
             image[py, px] = [avg, avg, avg]
 
