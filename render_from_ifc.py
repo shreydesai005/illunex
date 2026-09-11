@@ -362,13 +362,20 @@ def get_views(width, depth, height):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python3 render_from_ifc.py <room_id> [view1,view2,...]")
-        print("Available views: corner, top, bottom, bottom_worms_eye, side, front")
+        print("Usage: python3 render_from_ifc.py <room_id> [view1,view2,...] [gi_samples]")
+        print("Available views: corner, top, bottom, bottom_worms_eye, side, front, "
+              "full_room, fixtures")
+        print("gi_samples: optional -- enables global illumination with this many "
+              "bounce samples per pixel (e.g. 4). Slower (roughly 1+N times the cost) "
+              "but fills in bounced light, most visible on ceilings. Omit for direct-"
+              "light-only rendering (faster, the default this whole project has used).")
         sys.exit(1)
 
     room_id = sys.argv[1]
     requested_views = sys.argv[2].split(",") if len(sys.argv) > 2 else \
         ["corner", "front", "top", "bottom_worms_eye"]
+    gi_samples = int(sys.argv[3]) if len(sys.argv) > 3 else 0
+    enable_gi = gi_samples > 0
 
     try:
         width, depth, height, lights = build_scene_from_real_data(room_id)
@@ -405,10 +412,10 @@ def main():
         # (tested: 72 lights took 5+ minutes at supersample=2, timing out),
         # supersampling's 4x cost isn't worth it for a general overview shot
         # the way it is for guaranteeing a tiny fixture disc gets hit.
-        supersample = 1 if view_name == "full_room" else 2
+        supersample = 1 if (view_name == "full_room" or enable_gi) else 2
         render(lights, v["cam_pos"], v["look_at"], width, depth, height,
                fov_deg=v["fov_deg"], out_path=f"render_{room_id[:8]}_{view_name}.png",
-               supersample=supersample)
+               supersample=supersample, enable_gi=enable_gi, gi_samples=gi_samples)
 
 
 if __name__ == "__main__":
